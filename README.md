@@ -1,1 +1,164 @@
-🚀 ATHENA – Notes Sharing SystemA centralized, secure, and feature-rich web platform designed to revolutionize academic collaboration, resource sharing, and study group management for students and educators.🌐 Live Demo & DeploymentComponentStatusFront-End     Back-End Database Status✨ Why Athena? (Problem Solved)Existing academic sharing platforms like WhatsApp and Google Classroom are fragmented and inefficient. They lead to poor organization (notes get buried), lack crucial features like recognition and task tracking, and require external app dependencies.Athena provides a superior experience by being:Centralized and Accessible: All notes and communications are managed in a single, secure web-based platform.Structured: Overcomes the problem of content retrieval with clear organization and categorization.Feature-Rich: Introduces unique tools to enhance engagement and user control.🔑 Core Features & Modules<details><summary>1. User Modules (Student/Learner Focus) 🧑‍🎓</summary>FeatureDescriptionSourceStudy GroupsUsers can create, join, and manage study groups for collaborative learning.Notes & SharingUsers can upload, download, and manage academic content in a paperless and organized environment.Group ChatA real-time feature to facilitate discussions within the study group.Personal To-DoAllows users to set, manage, and track their academic tasks to stay organized.Reputation SystemA score assigned based on the number of quality notes contributed, encouraging participation and recognizing top contributors.</details><details><summary>2. Administration Module (Oversight & Moderation) 🛡️</summary>FeatureDescriptionSourceGroup ApprovalThe Admin must approve the creation of new study groups requested by users.User ManagementAbility to remove or suspend user accounts (status tracks active or banned).Reports HandlingCan respond to flagged or reported items (e.g., messages) and change their status (open, resolved, review).AnnouncementsSends updates or announcements to study groups or targeted users.</details>⚙️ Setup and InstallationPrerequisitesComponentRequirementOperating SystemWINDOWS 7 or higher / LinuxWeb ServerApache or similarDatabaseMySQL ServerPHPInstalled with MySQL extensionsHardwarePentium dual-core or above CPU, 2 GB RAM or aboveImplementation StepsThe implementation involves deploying the application to a web server and setting up the database.Database Setup: Set up the athena database using the provided SQL script (database/athena.sql).Configuration: Configure the database connection details in connect.php files (located in the respective admin/ and users/ directories).Deployment: Deploy the entire file structure to your configured Apache web server.Permissions: Ensure the server has the correct permissions to handle file uploads (e.g., for user profile pictures and notes).Access: The system will be accessible via the web server after thorough testing is complete.🧪 System TestingThe system underwent rigorous testing to ensure efficiency and accuracy.<details><summary>Testing Phases</summary>Unit Testing: Individual components like user_register.php and JavaScript functions were tested in isolation to ensure correct logic and database insertion/retrieval.Integration Testing: Modules (e.g., login and group creation) were incrementally tested together to check interfacing and ensure successful data association.Validation Testing: The fully integrated platform was tested against user requirements to confirm all features, from registration to administrative functions, worked as specified.</details>
+🎓 ATHENA: Notes Sharing System
+
+A centralized digital platform designed to streamline academic collaboration, note-sharing, and study group management for students and educators [cite: uploaded:abhinav022569/athena/Athena-5d6698f5a184b705fc2e9cd4b40b693186618e9d/Documents/ATHENA - Notes Sharing System.docx].
+
+💻 Tech Stack & Dependencies
+
+Component
+
+Technology
+
+File Location
+
+Front-End
+
+HTML, CSS, JavaScript
+
+index.php, style.css, script.js
+
+Back-End Logic
+
+PHP
+
+users/, admin/ directories
+
+Database
+
+MySQL Server
+
+database/athena.sql
+
+Server
+
+Apache (Assumed)
+
+N/A
+
+✨ Core Modules & Features
+
+🧑‍🎓 User Features (Students)
+
+Feature
+
+Description
+
+Key Mechanism
+
+Notes Sharing
+
+Upload/download academic files in a centralized repository.
+
+Reputation System rewards contributions [cite: uploaded:abhinav022569/athena/Athena-5d6698f5a184b705fc2e9cd4b40b693186618e9d/users/dashboard/chat_box/upload_file.php].
+
+Study Groups
+
+Create, join, and manage groups for focused collaboration.
+
+Uses study_group and group_members tables.
+
+Group Chat
+
+Real-time messaging within joined groups.
+
+PHP scripts handle message send_message.php, get_messages.php.
+
+To-Do List
+
+Personal task management for organization.
+
+Handled by users/dashboard/to-do/ scripts.
+
+🛡️ Admin Features
+
+Feature
+
+Description
+
+Key Mechanism
+
+Group Control
+
+Approve or reject new study group creation requests.
+
+admin/dashboard/approve_group/approve_group.php.
+
+User Moderation
+
+Manage user status (active/banned) and monitor activity.
+
+admin/dashboard/user_management/user_management.php.
+
+Report Handling
+
+Review flagged content/users and mark issues as resolved.
+
+admin/dashboard/reports/reports.php handles status.
+
+Announcements
+
+Send targeted or mass communication to users.
+
+admin/dashboard/announcements/announcements.php.
+
+🚀 Installation Guide
+
+Prerequisites
+
+Ensure you have a working LAMP/XAMPP/MAMP stack installed with PHP and MySQL [cite: uploaded:abhinav022569/athena/Athena-5d6698f5a184b705fc2e9cd4b40b693186618e9d/Documents/ATHENA - Notes Sharing System.docx].
+
+1. Database Setup
+
+Create a new MySQL database named athena.
+
+Import the schema:
+
+mysql -u [your_user] -p athena < database/athena.sql
+
+
+2. Configure Connections
+
+Update the database connection details in both configuration files to match your MySQL credentials (localhost, root, '', athena are defaults):
+
+Admin Connection: admin/connect.php
+
+<?php
+$conn = new mysqli('localhost', 'root', '', 'athena');
+// ...
+
+
+User Connection: users/connect.php
+
+<?php
+$conn = new mysqli('localhost', 'root', '', 'athena');
+// ...
+
+
+3. Deployment
+
+Place the entire athena folder into your web server's public directory (e.g., htdocs or www).
+
+Ensure correct file permissions for the upload directories (user_files/notes/ and user_files/profile_pics/).
+
+Access the application via your browser: http://localhost/athena/index.php.
+
+🔒 Default Credentials
+
+Role
+
+Username
+
+Password
+
+Admin
+
+admin
+
+123
+
+Test User
+
+testuser
+
+123456
+
+Developed by Abhinav R Nair
