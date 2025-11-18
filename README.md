@@ -73,4 +73,4 @@ These are the credentials pre-loaded into the `Admin` and `Users` tables via the
 
 ***
 
-*Developed by Abhinav R Nair, Anuja Praveen, and Pavithra Vijeshkumar.*
+*Developed by Abhinav R Nair.*
